@@ -7,6 +7,7 @@ from src.transformation.transform_orchestrate import transform_pipeline
 from src.load.data_router import route as data_router_route
 from utils.logger import get_logger
 from utils.auth import get_drive_service, get_sheets_service
+from utils.drive_utils import clear_input_folder
 from src.notification.notify_email import notify
 
 logger = get_logger(__name__)
@@ -44,6 +45,9 @@ def main():
                pipeline="ETL", 
                details=f"Processed {data_ingested.shape[0]} rows from {len(unique_banks)} banks."
                )
+        
+        # Step 7: Delete Input folder
+        clear_input_folder(service_auth=drive_auth, folder_id=SOURCE_FOLDER_ID, mime_type=XLS_MIME)
     except Exception as e:
         logger.error(f"Error in main pipeline: {e}")
         notify(status="FAILURE", pipeline="ETL", error=str(e))
