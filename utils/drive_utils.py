@@ -45,7 +45,7 @@ def list_files_from_gdrive(service_auth, folder_id: str, mime_type: str, max_fil
     files = results.get("files", [])
     if not files:
         logger.warning(f"No files found in folder: `{folder_id}`, terminating pipeline")
-        sys.exit(1)
+        files = []
     elif len(files) > max_file_no:
         logger.warning(f"""Found more than `{max_file_no}` file in folder: `{folder_id}`. 
                     Need only `{max_file_no}` latest file... Terminating pipeline to avoid ambiguity."""
@@ -318,3 +318,40 @@ def append_rows_to_gsheet(service_auth, sheet_id: str, df: pd.DataFrame):
     ws.append_rows(df.fillna("").astype(str).values.tolist(), value_input_option="USER_ENTERED")
     logger.info(f"Appended {len(df)} rows to GSheet: {sheet_id}")
 
+def clear_input_folder(service_auth, folder_id: str, mime_type) -> int:
+    """
+    Permanently deletes all files inside the input folder after
+    successful pipeline run.
+
+    Reuses list_files_from_gdrive to find files then deletes each
+    by file ID using Drive API.
+
+    Only deletes files — not subfolders.
+    Logs each deletion for audit trail.
+
+    Args:
+        service_auth : authenticated GDrive service
+        folder_id    : INPUT FOLDER ID from constants
+
+    Returns:
+        int: total number of files deleted
+    """
+    files = list_files_from_gdrive(
+        service_auth = service_auth,
+        folder_id    = folder_id,
+        mime_type    = mime_type,
+        max_file_no  = 999
+    )
+
+    if not files:
+        logger.info("Input folder already empty — nothing to delete")
+        return 0
+
+    deleted_count = 0
+    for file in files:
+        service_auth.files().delete(fileId=file["id"]).execute()
+        logger.info(f"Deleted from input: {file['name']} ({file['id']})")
+        deleted_count += 1
+
+    logger.info(f"Input folder cleared — {deleted_count} file(s) deleted")
+    return deleted_count
