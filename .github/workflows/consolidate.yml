@@ -30,4 +30,4 @@ jobs:
           GMAIL_FROM         : ${{ secrets.GMAIL_FROM }}
           GMAIL_APP_PASSWORD : ${{ secrets.GMAIL_APP_PASSWORD }}
           NOTIFY_TO_EMAIL    : ${{ secrets.NOTIFY_TO_EMAIL }}
-        run: python -m src.load.consolidate
+        run: python -m src.consolidation.consolidate
