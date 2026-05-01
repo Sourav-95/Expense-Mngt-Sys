@@ -2,6 +2,8 @@
 MAX_FILE_NO = 2     # maximum number of files allowed in the source folder for processing
 SOURCE_FOLDER_ID = "1yDjHhI__AD0Dm7DDGfliSYo9KbR7W_qW"                                  # Replace with your GDrive folder ID
 DEST_FOLDER_ID   = "1aCyfcBOqHQ-G5L54KCHQbpeTm36cx6Hf"                                  # Replace with your GDrive folder ID
+PROCESSED_FOLDER_ID = "1hfwh7f7LAkR9LscRW9dnnhGkAWDX54vK"
+
 
 # mime types
 XLSX_MIME   = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"

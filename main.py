@@ -1,13 +1,13 @@
 from config.constants import SOURCE_FOLDER_ID, \
-        DEST_FOLDER_ID, XLS_MIME, GSHEET_MIME, \
-        MAX_FILE_NO
+                            DEST_FOLDER_ID, PROCESSED_FOLDER_ID, \
+                            XLS_MIME, GSHEET_MIME, MAX_FILE_NO
 import pandas as pd
 from src.extract.ingest_orchestrate import source_reader
 from src.transformation.transform_orchestrate import transform_pipeline
 from src.load.data_router import route as data_router_route
 from utils.logger import get_logger
 from utils.auth import get_drive_service, get_sheets_service
-from utils.drive_utils import clear_input_folder
+from utils.drive_utils import move_files_to_processed
 from src.notification.notify_email import notify
 
 logger = get_logger(__name__)
@@ -39,15 +39,19 @@ def main():
 
         # Step 5: Load transformed data back to GDrive & GSheet
         data_router_route(drive_auth, sheet_auth, data_transformed)
-
-        # Step 6: Send success notification
-        notify(status="SUCCESS", 
-               pipeline="ETL", 
-               details=f"Processed {data_ingested.shape[0]} rows from {len(unique_banks)} banks."
-               )
         
-        # Step 7: Delete Input folder
-        clear_input_folder(service_auth=drive_auth, folder_id=SOURCE_FOLDER_ID, mime_type=XLS_MIME)
+        # Step 6: Delete Input folder
+        move_files_to_processed(service_auth=drive_auth, 
+                                input_folder_id=SOURCE_FOLDER_ID, 
+                                processed_folder_id=PROCESSED_FOLDER_ID, 
+                                xls_mime_type=XLS_MIME
+                                )
+        
+        # Step 7: Send success notification
+        # notify(status="SUCCESS", 
+        #        pipeline="ETL", 
+        #        details=f"Processed {data_ingested.shape[0]} rows from {len(unique_banks)} banks."
+        #        )
     except Exception as e:
         logger.error(f"Error in main pipeline: {e}")
         notify(status="FAILURE", pipeline="ETL", error=str(e))
