@@ -349,7 +349,8 @@ def clear_input_folder(service_auth, folder_id: str, mime_type) -> int:
 
     deleted_count = 0
     for file in files:
-        service_auth.files().delete(fileId=file["id"]).execute()
+        # service_auth.files().delete(fileId=file["id"]).execute()
+        service_auth.files().update(fileId=file["id"], body={"trashed": True}).execute()
         logger.info(f"Deleted from input: {file['name']} ({file['id']})")
         deleted_count += 1
 
