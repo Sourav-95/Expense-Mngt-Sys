@@ -48,10 +48,10 @@ def main():
                                 )
         
         # Step 7: Send success notification
-        # notify(status="SUCCESS", 
-        #        pipeline="ETL", 
-        #        details=f"Processed {data_ingested.shape[0]} rows from {len(unique_banks)} banks."
-        #        )
+        notify(status="SUCCESS", 
+               pipeline="ETL", 
+               details=f"Processed {data_ingested.shape[0]} rows from {len(unique_banks)} banks."
+               )
     except Exception as e:
         logger.error(f"Error in main pipeline: {e}")
         notify(status="FAILURE", pipeline="ETL", error=str(e))
