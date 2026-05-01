@@ -318,41 +318,42 @@ def append_rows_to_gsheet(service_auth, sheet_id: str, df: pd.DataFrame):
     ws.append_rows(df.fillna("").astype(str).values.tolist(), value_input_option="USER_ENTERED")
     logger.info(f"Appended {len(df)} rows to GSheet: {sheet_id}")
 
-def clear_input_folder(service_auth, folder_id: str, mime_type) -> int:
+def move_files_to_processed(service_auth, input_folder_id: str, processed_folder_id: str, xls_mime_type) -> int:
     """
-    Permanently deletes all files inside the input folder after
-    successful pipeline run.
+    Moves all files from input folder to processed/ subfolder
+    after successful pipeline run.
 
-    Reuses list_files_from_gdrive to find files then deletes each
-    by file ID using Drive API.
-
-    Only deletes files — not subfolders.
-    Logs each deletion for audit trail.
+    Service account can move files with Editor access even without ownership.
 
     Args:
-        service_auth : authenticated GDrive service
-        folder_id    : INPUT FOLDER ID from constants
+        service_auth         : authenticated GDrive service
+        input_folder_id      : SOURCE_FOLDER_ID — input/ folder
+        processed_folder_id  : ID of processed/ subfolder inside input/
 
     Returns:
-        int: total number of files deleted
+        int: total files moved
     """
     files = list_files_from_gdrive(
         service_auth = service_auth,
-        folder_id    = folder_id,
-        mime_type    = mime_type,
+        folder_id    = input_folder_id,
+        mime_type    = xls_mime_type,
         max_file_no  = 999
     )
 
     if not files:
-        logger.info("Input folder already empty — nothing to delete")
+        logger.info("No files to move — input folder empty")
         return 0
 
-    deleted_count = 0
+    moved_count = 0
     for file in files:
-        # service_auth.files().delete(fileId=file["id"]).execute()
-        service_auth.files().update(fileId=file["id"], body={"trashed": True}).execute()
-        logger.info(f"Deleted from input: {file['name']} ({file['id']})")
-        deleted_count += 1
+        service_auth.files().update(
+            fileId        = file["id"],
+            addParents    = processed_folder_id,
+            removeParents = input_folder_id,
+            fields        = "id, parents"
+        ).execute()
+        logger.info(f"Moved to processed: {file['name']} ({file['id']})")
+        moved_count += 1
 
-    logger.info(f"Input folder cleared — {deleted_count} file(s) deleted")
-    return deleted_count
+    logger.info(f"Total files moved to processed: {moved_count}")
+    return moved_count
