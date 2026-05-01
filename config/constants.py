@@ -67,9 +67,10 @@ SUBCATEGORY_MAPPING = {
     }
 
 CATEGORY_FRM_SUBCATEGORY = {
-    "Loan"          :   ["HDFC", "Fibe", "Credit Card", "Money View"],
+    "Loan"          :   ["HDFC", "Fibe", "Credit Card", "Money View", "House"],
     "Rent"          :   ["Home", "Subscriptions","Rent"],
-    "Bill"          :   ["Mobile", "Internet", "Water", "Electricity", "Maid", "Netflix", "Gadget", "Recharge", "Googleplay"],
+    "Maintenance"   :   ["DebitCard"],
+    "Bill"          :   ["Mobile", "Internet", "Water", "Electricity", "Maid", "Netflix", "Gadget", "Recharge", "Googleplay", "Market"],
     "HomeAccesories":   ["Daily Usage", "HomeAccesories", "Ekart"],
     "Personal"      :   ["Hair", "Personal", "Rehearsal", "Music", "Entertainment", "Cloths", "Father", "Tour", "Unseen", "Donate", "Gift"],
     "Medical"       :   ["Wife", "Self", "Parents", "Pharma"],
@@ -80,9 +81,9 @@ CATEGORY_FRM_SUBCATEGORY = {
     "Tea_N_Others"  :   ["Tea", "Others"],
     "Food"          :   ["Snacks", "Regular", "Office Food", "Cooking Gas", "Food", "HungerBox", "Sweets"],
     "Puja"          :   ["Flowers", "One Time", "Kalibari", "Puja"],
-    "Investment"    :   ["Angel One", "Zerodha"],
+    "Investment"    :   ["Angel One", "Zerodha", "NPS", "RD"],
     "Transfer"      :   ["Transfer"],
-    "Income"        :   ["Salary", "Interest", "Dividend"]
+    "Income"        :   ["Salary", "Interest", "Dividend", "Music"]
 }
 
 # Unique key builder used for incremental load in loader.py
