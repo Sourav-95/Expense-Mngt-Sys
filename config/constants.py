@@ -38,16 +38,20 @@ THRESHOLD_NULL_FOR_ROW = 2
 # Category mapping for cleaning the 'raw_category' column in the transformation step
 SUBCATEGORY_MAPPING = {
         'restau'        : 'Restaurant',
+        'Eatgood'       : 'Snacks',
         'rehear'        : 'Rehearsal',
         'grocer'        : 'Grocery',
+        'Ramachandiran l': 'Grocery',
         'foods'         : 'Food',
         'food'          : 'Food',
+        'Furnit'        : 'Furniture',
         '0001transfer'  : 'Transfer',
         'transfer'      : 'Transfer',
         'others'        : 'Other',
         'other'         : 'Other',
         'paymen'        : 'Payment',
         'advanc'        : 'Advance',
+        'Urbanc'        : 'Maintainence',
         'coffee'        : 'Tea',
         'tea'           : 'Tea',
         'upi'           : 'upi',
@@ -65,27 +69,29 @@ SUBCATEGORY_MAPPING = {
         'sweets'        : 'Sweets',
         'fruits'        : 'Fruits',
         'fruit'         : 'Fruits',
-        'juice'         : 'Juice'
+        'juice'         : 'Juice',
+        'bike'          : 'bike'
     }
 
 CATEGORY_FRM_SUBCATEGORY = {
     "Loan"          :   ["HDFC", "Fibe", "Credit Card", "Money View", "House"],
-    "Rent"          :   ["Home", "Subscriptions","Rent"],
+    "Rent"          :   ["Home", "Subscriptions","Rent", "Furniture"],
     "Maintenance"   :   ["DebitCard"],
     "Bill"          :   ["Mobile", "Internet", "Water", "Electricity", "Maid", "Netflix", "Gadget", "Recharge", "Googleplay", "Market"],
-    "HomeAccesories":   ["Daily Usage", "HomeAccesories", "Ekart"],
+    "HomeAccesories":   ["Daily Usage", "HomeAccesories", "Ekart", 'Maintainence'],
     "Personal"      :   ["Hair", "Personal", "Rehearsal", "Music", "Entertainment", "Cloths", "Father", "Tour", "Unseen", "Donate", "Gift"],
-    "Medical"       :   ["Wife", "Self", "Parents", "Pharma"],
+    "Medical"       :   ["Medicine", "Insurance", "Pharma"],
     "Restuarants"   :   ["DineIn", "Online Order", "Restuarants", "hsr street", "Swiggy", "Zomato"],
-    "Wife"          :   ["Medical", "Recurring", "Birds", "Extras", "Cloths", "Future Exp", "Wife dress", "Wife bird"],
+    "Wife"          :   ["Recurring", "Birds", "Extras", "Cloths", "Future Exp", "Wife dress", "Wife bird"],
     "Grocery"       :   ["Meat", "Grocery", "Fruits", "Juice"],
-    "Transportation":   ["Fuel", "Service", "Wash & Maintain", "AutoCab"],
+    "Transportation":   ["Fuel", "Service", "Wash & Maintain", "AutoCab", "Bike"],
     "Tea_N_Others"  :   ["Tea", "Others"],
     "Food"          :   ["Snacks", "Regular", "Office Food", "Cooking Gas", "Food", "HungerBox", "Sweets"],
     "Puja"          :   ["Flowers", "One Time", "Kalibari", "Puja"],
     "Investment"    :   ["Angel One", "Zerodha", "NPS", "RD"],
     "Transfer"      :   ["Transfer"],
-    "Income"        :   ["Salary", "Interest", "Dividend", "Music"]
+    "Income"        :   ["Salary", "Interest", "Dividend", "Music"],
+    "Debt Clearance":   ["House"]
 }
 
 # Unique key builder used for incremental load in loader.py
