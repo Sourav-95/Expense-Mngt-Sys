@@ -174,10 +174,11 @@ def add_filter_col(df: pd.DataFrame) -> pd.DataFrame:
     """
     conditions = [
         df["Category"].isin(["Income"]),
-        df["Category"].isin(["Investment", "Debt Clearance"]),
+        df["Category"].isin(["Investment"]),
+        df["Category"].isin(["Debt Clearance"]),
         ~df["Category"].isin(["Income", "Investment", "Debt Clearance", "Transfer"])
     ]
-    values = ["Income", "Investment", "Expense"]
+    values = ["Income", "Investment", "Debt Clearance", "Expense"]
 
     df["filter_app"] = np.select(conditions, values, default="")
     return df
