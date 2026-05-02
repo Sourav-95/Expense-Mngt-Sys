@@ -3,7 +3,7 @@ load_dotenv()
 
 import time
 import pandas as pd
-
+import numpy as np
 from utils.auth import get_drive_service, get_sheets_service
 from utils.drive_utils import (list_files_from_gdrive,
                                read_gsheet_as_df,
@@ -167,6 +167,20 @@ def _write_consolidated(gsheet_auth, master_df: pd.DataFrame):
 
     logger.info(f"Consolidated master written: {len(master_df)} rows → {CONSOLIDATED_SHEET_NAME}")
 
+def add_filter_col(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Adds filter_app column for dashboard filtering.
+    Income / Investment / Expense classification based on Category.
+    """
+    conditions = [
+        df["Category"].isin(["Income"]),
+        df["Category"].isin(["Investment", "Debt Clearance"]),
+        ~df["Category"].isin(["Income", "Investment", "Debt Clearance", "Transfer"])
+    ]
+    values = ["Income", "Investment", "Expense"]
+
+    df["filter_app"] = np.select(conditions, values, default="")
+    return df
 
 def run():
     """
@@ -201,7 +215,7 @@ def run():
         master_df = master_df.sort_values("date", ascending=True).reset_index(drop=True)
 
         # Filter the required columns only
-        # ----Write your code here----
+        master_df = add_filter_col(master_df)
 
         logger.info(f"Master dataset ready: {len(master_df)} rows across {master_df['source_month'].nunique()} months")
 
