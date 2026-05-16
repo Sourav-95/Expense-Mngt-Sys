@@ -88,6 +88,6 @@ def data_cleaner(data:pd.DataFrame, file_name, expected_column=EXPECTED_COLUMN, 
         logger.info(f"Total Length of data after cleaning : {df.shape}")
         logger.info(f"Column in dataframe : {df.columns}")
     except Exception as e:
-        logger.error(f"An error occurred while cleaning the data: {e}")
+        logger.error(f"An error occurred while cleaning the data: {e}", exc_info=True)
 
     return df
