@@ -52,7 +52,7 @@ def data_cleaner(data:pd.DataFrame, file_name, expected_column=EXPECTED_COLUMN, 
         df = df[df['null_count'] <= null_threshold_for_row]
 
         # 3. Convert all columns to lower
-        df.columns = [col.lower() for col in df.columns]
+        df.columns = [col.lower().strip() for col in df.columns]
         logger.info(f"Columns after lowercase: {df.columns.tolist()}")
 
         # 4. Rename few columns for similar one
