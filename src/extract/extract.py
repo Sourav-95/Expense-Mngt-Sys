@@ -53,6 +53,7 @@ def data_cleaner(data:pd.DataFrame, file_name, expected_column=EXPECTED_COLUMN, 
 
         # 3. Convert all columns to lower
         df.columns = [col.lower() for col in df.columns]
+        logger.info(f"Columns after lowercase: {df.columns.tolist()}")
 
         # 4. Rename few columns for similar one
         for col in df.columns:
