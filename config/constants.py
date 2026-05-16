@@ -52,6 +52,7 @@ SUBCATEGORY_MAPPING = {
         'paymen'        : 'Payment',
         'advanc'        : 'Advance',
         'Urbanc'        : 'Maintainence',
+        'mainte'        : 'Maintainence',
         'coffee'        : 'Tea',
         'tea'           : 'Tea',
         'upi'           : 'upi',
