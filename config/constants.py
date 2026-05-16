@@ -53,7 +53,7 @@ SUBCATEGORY_MAPPING = {
         'advanc'        : 'Advance',
         'Urbanc'        : 'Maintainence',
         'mainte'        : 'Maintainence',
-        'Medica'        : 'Medical'
+        'Medica'        : 'Medical',
         'coffee'        : 'Tea',
         'tea'           : 'Tea',
         'upi'           : 'upi',
