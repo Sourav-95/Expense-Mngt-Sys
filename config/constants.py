@@ -90,7 +90,7 @@ CATEGORY_FRM_SUBCATEGORY = {
     "Tea_N_Others"  :   ["Tea", "Others"],
     "Food"          :   ["Snacks", "Regular", "Office Food", "Cooking Gas", "Food", "HungerBox", "Sweets"],
     "Puja"          :   ["Flowers", "One Time", "Kalibari", "Puja"],
-    "Investment"    :   ["Angel One", "Zerodha", "NPS", "RD"],
+    "Investment"    :   ["Angel One", "Zerodha", "NPS", "RD", "FD", "PPF"],
     "Transfer"      :   ["Transfer", "InvestRedemption"],
     "Income"        :   ["Salary", "Interest", "Dividend", "Music"],
     "Debt Clearance":   ["House"]
