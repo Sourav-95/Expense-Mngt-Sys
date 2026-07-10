@@ -126,9 +126,13 @@ def data_preprocessor(data: pd.DataFrame, bank: str) -> pd.DataFrame:
     bank_name: str = bank_result[0]
     skip_row_value: int = bank_result[1]
     split_particular: str = bank_result[2]
+
+    # Safely construct the regex bracket expression: e.g., "[- ]" or "[/]"
+    regex_pattern = f"[{split_particular}]"
     
-    try:
-        df['split'] = df['particulars'].str.split(split_particular)
+    try:    
+        # Use regex=True to split on ANY character inside those brackets
+        df['split'] = df['particulars'].str.split(regex_pattern, regex=True)
 
         # Removes items that are empty OR just contain spaces
         df['split'] = df['split'].apply(lambda x: [item for item in x if item.strip() != ''])

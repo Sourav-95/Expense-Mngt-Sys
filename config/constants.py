@@ -27,7 +27,7 @@ BANK_VARIABLES = {
     },
     "hdfc": {
         "skip_row_value" : 20,
-        "split_particular" : ' '
+        "split_particular" : '- '
     }
 }
 
