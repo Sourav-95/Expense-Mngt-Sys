@@ -94,7 +94,7 @@ CATEGORY_FRM_SUBCATEGORY = {
     "Food"          :   ["Snacks", "Regular", "Office Food", "Cooking Gas", "Food", "HungerBox", "Sweets"],
     "Puja"          :   ["Flowers", "One Time", "Kalibari", "Puja"],
     "Investment"    :   ["Angel One", "Zerodha", "NPS", "RD", "FD", "PPF"],
-    "Transfer"      :   ["Transfer", "InvestRedemption"],
+    "Transfer"      :   ["Transfer", "InvestRedemption", "Refund"],
     "Income"        :   ["Salary", "Interest", "Dividend", "Music"],
     "Debt Clearance":   ["House"],
     "Liability"     :   ["CreditTransfer", "LoanDisbursement"]
