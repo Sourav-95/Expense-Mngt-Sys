@@ -81,7 +81,7 @@ CATEGORY_FRM_SUBCATEGORY = {
     "Maintenance"   :   ["DebitCard"],
     "Bill"          :   ["Mobile", "Internet", "Water", "Electricity", "Maid", "Netflix", "Gadget", "Recharge", "Googleplay", "Market"],
     "HomeAccesories":   ["Daily Usage", "HomeAccesories", "Ekart", 'Maintainence'],
-    "Personal"      :   ["Hair", "Personal", "Rehearsal", "Music", "Entertainment", "Cloths", "Father", "Tour", "Unseen", "Donate", "Gift"],
+    "Personal"      :   ["Hair", "Personal", "Rehearsal", "Music", "Entertainment", "Cloths", "Father", "Tour", "Unseen", "Donate", "Gift", "BankCharges"],
     "Medical"       :   ["Medicine", "Insurance", "Pharma", "Medical"],
     "Restuarants"   :   ["DineIn", "Online Order", "Restuarants", "hsr street", "Swiggy", "Zomato"],
     "Wife"          :   ["Recurring", "Birds", "Extras", "Cloths", "Future Exp", "Wife dress", "Wife bird", "Wife"],
@@ -91,7 +91,7 @@ CATEGORY_FRM_SUBCATEGORY = {
     "Food"          :   ["Snacks", "Regular", "Office Food", "Cooking Gas", "Food", "HungerBox", "Sweets"],
     "Puja"          :   ["Flowers", "One Time", "Kalibari", "Puja"],
     "Investment"    :   ["Angel One", "Zerodha", "NPS", "RD"],
-    "Transfer"      :   ["Transfer"],
+    "Transfer"      :   ["Transfer", "InvestRedemption"],
     "Income"        :   ["Salary", "Interest", "Dividend", "Music"],
     "Debt Clearance":   ["House"]
 }
