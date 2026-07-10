@@ -77,7 +77,8 @@ SUBCATEGORY_MAPPING = {
         'Anchorage'     : 'Market',
         'Paidviac'      : 'CreditTransfer',
         'Indian railways uts' : 'Train',
-        'Daalchini'     : 'Office Food'
+        'Daalchini'     : 'Office Food',
+        'Electr'        : 'Electricity'
     }
 
 CATEGORY_FRM_SUBCATEGORY = {
