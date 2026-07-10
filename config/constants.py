@@ -78,7 +78,8 @@ SUBCATEGORY_MAPPING = {
         'Paidviac'      : 'CreditTransfer',
         'Indian railways uts' : 'Train',
         'Daalchini'     : 'Office Food',
-        'Electr'        : 'Electricity'
+        'Electr'        : 'Electricity',
+        'Laundr'        : 'Laundry'
     }
 
 CATEGORY_FRM_SUBCATEGORY = {
@@ -86,7 +87,7 @@ CATEGORY_FRM_SUBCATEGORY = {
     "Rent"          :   ["Home", "Subscriptions","Rent", "Furniture"],
     "Maintenance"   :   ["DebitCard"],
     "Bill"          :   ["Mobile", "Internet", "Water", "Electricity", "Maid", "Netflix", "Gadget", "Recharge", "Googleplay", "Market"],
-    "HomeAccesories":   ["Daily Usage", "HomeAccesories", "Ekart", 'Maintainence'],
+    "HomeAccesories":   ["Daily Usage", "HomeAccesories", "Ekart", "Maintainence", "Laundry"],
     "Personal"      :   ["Hair", "Personal", "Rehearsal", "Music", "Entertainment", "Cloths", "Father", "Tour", "Unseen", "Donate", "Gift", "BankCharges"],
     "Medical"       :   ["Medicine", "Insurance", "Pharma", "Medical"],
     "Restuarants"   :   ["DineIn", "Online Order", "Restuarants", "hsr street", "Swiggy", "Zomato"],
