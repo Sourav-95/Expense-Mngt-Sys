@@ -72,7 +72,8 @@ SUBCATEGORY_MAPPING = {
         'fruits'        : 'Fruits',
         'fruit'         : 'Fruits',
         'juice'         : 'Juice',
-        'bike'          : 'bike'
+        'bike'          : 'Bike',
+        'blinki'        : 'Blinkit'
     }
 
 CATEGORY_FRM_SUBCATEGORY = {
