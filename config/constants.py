@@ -76,7 +76,8 @@ SUBCATEGORY_MAPPING = {
         'blinki'        : 'Blinkit',
         'Anchorage'     : 'Market',
         'Paidviac'      : 'CreditTransfer',
-        'Indian railways uts' : 'Train'
+        'Indian railways uts' : 'Train',
+        'Daalchini'     : 'Office Food'
     }
 
 CATEGORY_FRM_SUBCATEGORY = {
