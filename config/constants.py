@@ -73,7 +73,9 @@ SUBCATEGORY_MAPPING = {
         'fruit'         : 'Fruits',
         'juice'         : 'Juice',
         'bike'          : 'Bike',
-        'blinki'        : 'Blinkit'
+        'blinki'        : 'Blinkit',
+        'Anchorage'     : 'Market',
+        'Paidviac'      : 'CreditTransfer'
     }
 
 CATEGORY_FRM_SUBCATEGORY = {
@@ -94,7 +96,8 @@ CATEGORY_FRM_SUBCATEGORY = {
     "Investment"    :   ["Angel One", "Zerodha", "NPS", "RD", "FD", "PPF"],
     "Transfer"      :   ["Transfer", "InvestRedemption"],
     "Income"        :   ["Salary", "Interest", "Dividend", "Music"],
-    "Debt Clearance":   ["House"]
+    "Debt Clearance":   ["House"],
+    "Liability"     :   ["CreditTransfer", "LoanDisbursement"]
 }
 
 # Unique key builder used for incremental load in loader.py
