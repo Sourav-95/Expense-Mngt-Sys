@@ -101,7 +101,7 @@ CATEGORY_FRM_SUBCATEGORY = {
     "Transfer"      :   ["Transfer", "InvestRedemption", "Refund"],
     "Income"        :   ["Salary", "Interest", "Dividend", "Music"],
     "Debt Clearance":   ["House"],
-    "Liability"     :   ["CreditTransfer", "LoanDisbursement"]
+    "Liability"     :   ["CreditTransfer", "LoanDisbursement", "Home-FatherNLaw"]
 }
 
 # Unique key builder used for incremental load in loader.py
