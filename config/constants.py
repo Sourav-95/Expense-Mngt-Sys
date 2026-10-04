@@ -91,7 +91,7 @@ CATEGORY_FRM_SUBCATEGORY = {
     "Personal"      :   ["Hair", "Personal", "Rehearsal", "Music", "Entertainment", "Cloths", "Father", "Tour", "Unseen", "Donate", "Gift", "BankCharges"],
     "Medical"       :   ["Medicine", "Insurance", "Pharma", "Medical"],
     "Restuarants"   :   ["DineIn", "Online Order", "Restuarants", "hsr street", "Swiggy", "Zomato"],
-    "Wife"          :   ["Recurring", "Birds", "Extras", "Cloths", "Future Exp", "Wife dress", "Wife bird", "Wife"],
+    "Wife"          :   ["Recurring", "Birds", "Extras", "Cloths", "Future Exp", "Wife dress", "Wife bird", "Wife", "Parlour"],
     "Grocery"       :   ["Meat", "Grocery", "Fruits", "Juice", "Blinkit"],
     "Transportation":   ["Fuel", "Service", "Wash & Maintain", "AutoCab", "Bike", "Train", "Airport"],
     "Tea_N_Others"  :   ["Tea", "Others"],
