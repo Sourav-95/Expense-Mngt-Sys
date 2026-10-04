@@ -93,7 +93,7 @@ CATEGORY_FRM_SUBCATEGORY = {
     "Restuarants"   :   ["DineIn", "Online Order", "Restuarants", "hsr street", "Swiggy", "Zomato"],
     "Wife"          :   ["Recurring", "Birds", "Extras", "Cloths", "Future Exp", "Wife dress", "Wife bird", "Wife"],
     "Grocery"       :   ["Meat", "Grocery", "Fruits", "Juice", "Blinkit"],
-    "Transportation":   ["Fuel", "Service", "Wash & Maintain", "AutoCab", "Bike", "Train"],
+    "Transportation":   ["Fuel", "Service", "Wash & Maintain", "AutoCab", "Bike", "Train", "Airport"],
     "Tea_N_Others"  :   ["Tea", "Others"],
     "Food"          :   ["Snacks", "Regular", "Office Food", "Cooking Gas", "Food", "HungerBox", "Sweets"],
     "Puja"          :   ["Flowers", "One Time", "Kalibari", "Puja"],
